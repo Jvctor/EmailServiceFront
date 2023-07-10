@@ -9,17 +9,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .container form{
   padding: 32px 32px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  border-radius: 12px;
+  border-radius: var(--border--radius-default);
+  height: 350px;
 }
 
 .container form .name-form-container{
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 14px;  
+}
+
+.container .product-details{
+  padding: 24px;
+  background: linear-gradient(90deg, rgba(255,236,199,1)0%, rgba(255,237,247,1) 100%);
+  border-radius: var(--border--radius-default);
+  height: 350px;
 }

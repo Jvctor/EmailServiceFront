@@ -11,8 +11,8 @@ function App() {
   return (
     <div className='container'>
       <form>
-         {/* <Spacer height='4' /> */}
-        <div className='name-form-container'>  
+        {/* <Spacer height='4' /> */}
+        <div className='name-form-container'>
           <PrimaryInput
             value={email}
             onChange={event => setEmail(event.target.value)}
@@ -28,7 +28,7 @@ function App() {
             placeholder='Silva'
           />
         </div>
-        <Spacer height='4'/>
+        <Spacer height='4' />
         <PrimaryInput
           value={secondName}
           onChange={event => setEmail(event.target.value)}
@@ -36,13 +36,17 @@ function App() {
           label='Digite seu e-mail'
           placeholder='fulano@email.com'
         />
-        <Spacer height='4'/>
+        <Spacer height='4' />
         <Button colorScheme='green' width='100%'>Enviar</Button>
       </form>
       <Spacer height='6' maxWidth='4' />
       <div className='product-details'>
-     <h2>você irá pagar</h2>
-     <span>R$ 250,00</span>
+        <h2>Assinatura Mensal</h2>
+        <Spacer height='4' maxWidth='4' />
+        <p>você irá pagar</p>
+        <span>R$ 250,00</span>
+        <Spacer height='4' maxWidth='4' />
+        <p>regras fhdsfjsdhfjdshfjsdhfjdshfjdfhjsdfhdjshfjsdhfjsdhfjsdhfjdsfhjsdfhdsj</p>
       </div>
     </div>
   )

@@ -2,11 +2,21 @@ import { useState } from 'react'
 import { Button, Spacer } from '@chakra-ui/react'
 import PrimaryInput from './components/Input/PrimaryInput'
 import './App.css'
+import { userIdentityMutation } from './hooks/userIdentityMutation'
 
 function App() {
+  const {mutate} = userIdentityMutation()
   const [email, setEmail] = useState("")
   const [firstName, setFirstName] = useState("")
   const [secondName, setSecondName] = useState("")
+
+  const submit = () => {
+mutate({
+  email,
+  firstName,
+  lastName: secondName
+})
+  }
 
   return (
     <div className='container'>
@@ -14,15 +24,15 @@ function App() {
         {/* <Spacer height='4' /> */}
         <div className='name-form-container'>
           <PrimaryInput
-            value={email}
-            onChange={event => setEmail(event.target.value)}
+            value={firstName}
+            onChange={event => setFirstName(event.target.value)}
             name="firstName"
             label='Primeiro'
             placeholder='João'
           />
           <PrimaryInput
-            value={firstName}
-            onChange={event => setEmail(event.target.value)}
+            value={secondName}
+            onChange={event => setSecondName(event.target.value)}
             name="secondName"
             label='Sobrenome'
             placeholder='Silva'
@@ -30,14 +40,14 @@ function App() {
         </div>
         <Spacer height='4' />
         <PrimaryInput
-          value={secondName}
+          value={email}
           onChange={event => setEmail(event.target.value)}
           name="email"
           label='Digite seu e-mail'
           placeholder='fulano@email.com'
         />
         <Spacer height='4' />
-        <Button colorScheme='green' width='100%'>Enviar</Button>
+        <Button colorScheme='green' width='100%' onClick={submit}>Enviar</Button>
       </form>
       <Spacer height='6' maxWidth='4' />
       <div className='product-details'>

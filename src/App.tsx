@@ -5,23 +5,22 @@ import './App.css'
 import { userIdentityMutation } from './hooks/userIdentityMutation'
 
 function App() {
-  const {mutate} = userIdentityMutation()
+  const { mutate } = userIdentityMutation()
   const [email, setEmail] = useState("")
   const [firstName, setFirstName] = useState("")
   const [secondName, setSecondName] = useState("")
 
   const submit = () => {
-mutate({
-  email,
-  firstName,
-  lastName: secondName
-})
+    mutate({
+      email,
+      firstName,
+      lastName: secondName
+    })
   }
 
   return (
     <div className='container'>
       <form>
-        {/* <Spacer height='4' /> */}
         <div className='name-form-container'>
           <PrimaryInput
             value={firstName}

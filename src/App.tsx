@@ -2,22 +2,26 @@ import { useState } from 'react'
 import { Button, Spacer } from '@chakra-ui/react'
 import PrimaryInput from './components/Input/PrimaryInput'
 import './App.css'
-import { userIdentityMutation } from './hooks/userIdentityMutation'
+import emailjs from '@emailjs/browser'
 
 function App() {
-  const { mutate } = userIdentityMutation()
   const [email, setEmail] = useState("")
   const [firstName, setFirstName] = useState("")
   const [secondName, setSecondName] = useState("")
 
   const submit = () => {
-    mutate({
-      email,
-      firstName,
-      lastName: secondName
-    })
+    let message = 'Você acabou de adquirir sua assinatura mensal no valor de R$250,00'
+
+    const templateParams = {
+      from_name: firstName + secondName,
+      message: message,
+      email: email
+    }
+    emailjs.send("service_1mzz6fd", "template_tao9hcc", templateParams, "zqlBCdDW5aJsrtC0b")
+  
   }
 
+  
   return (
     <div className='container'>
       <form>
@@ -55,7 +59,7 @@ function App() {
         <p>você irá pagar</p>
         <span>R$ 250,00</span>
         <Spacer height='4' maxWidth='4' />
-        <p>regras fhdsfjsdhfjdshfjsdhfjdshfjdfhjsdfhdjshfjsdhfjsdhfjsdhfjdsfhjsdfhdsj</p>
+        <p></p>
       </div>
     </div>
   )

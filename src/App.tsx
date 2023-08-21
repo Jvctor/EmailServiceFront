@@ -18,10 +18,17 @@ function App() {
       email: email
     }
     emailjs.send("service_1mzz6fd", "template_tao9hcc", templateParams, "zqlBCdDW5aJsrtC0b")
-  
+      .then((response) => {
+        console.log('EMAIL ENVIADO', response.status, response.text)
+        setFirstName('')
+        setSecondName('')
+        setEmail('')
+      }, (erro) => {
+        console.log("ERRO: ", erro)
+      })
   }
 
-  
+
   return (
     <div className='container'>
       <form>

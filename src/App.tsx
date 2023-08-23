@@ -59,7 +59,7 @@ function App() {
         <Spacer height='4' />
         <Button colorScheme='green' width='100%' onClick={submit}>Enviar</Button>
       </form>
-      <Spacer height='6' maxWidth='4' />
+      {/* <Spacer height='6' maxWidth='4' /> */}
       <div className='product-details'>
         <h2>Assinatura Mensal</h2>
         <Spacer height='4' maxWidth='4' />

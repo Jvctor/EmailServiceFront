@@ -10,24 +10,26 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  gap: 2rem;
+
 }
 
-.container form{
+.container form {
   padding: 32px 32px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: var(--border--radius-default);
   height: 300px;
 }
 
-.container form .name-form-container{
+.container form .name-form-container {
   display: flex;
   align-items: center;
-  gap: 14px;  
+  gap: 14px;
 }
 
-.container .product-details{
+.container .product-details {
   padding: 24px;
-  background: linear-gradient(90deg, rgba(255,236,199,1)0%, rgba(255,237,247,1) 100%);
+  background: linear-gradient(90deg, rgba(255, 236, 199, 1)0%, rgba(255, 237, 247, 1) 100%);
   border-radius: var(--border--radius-default);
   height: 300px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -41,7 +43,7 @@
 }
 
 .container .product-details p {
-  color: #616161; 
+  color: #616161;
   text-align: start;
   max-width: 300px;
 }
@@ -53,4 +55,52 @@
   width: 100%;
   color: #242424;
   display: block;
+}
+
+/* Estilos para dispositivos móveis (até 860px de largura) */
+@media screen and (max-width: 860px) {
+  .container {
+    flex-direction: column-reverse;
+    /* Mude para um layout de coluna */
+    align-items: center;
+  }
+
+  .container form {
+    padding: 32px 32px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: var(--border--radius-default);
+    height: 300px;
+    width: 83%;
+    height: 23rem;
+  }
+
+  .input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+  .container form .name-form-container {
+    flex-direction: column;
+  }
+
+  .container .product-details {
+    height: 9rem;
+    width: 82%;
+    padding: 16px;
+  }
+
+  .container .product-details h2 {
+    font-size: 24px;
+    /* Reduza o tamanho da fonte do título do produto */
+  }
+
+  .container .product-details p {
+    font-size: 14px;
+    /* Reduza o tamanho da fonte dos parágrafos dos detalhes do produto */
+    max-width: 100%;
+    /* Faça o texto ocupar a largura total */
+  }
 }

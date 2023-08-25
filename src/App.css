@@ -92,13 +92,10 @@
 
   .container .product-details h2 {
     font-size: 24px;
-    /* Reduza o tamanho da fonte do título do produto */
   }
 
   .container .product-details p {
     font-size: 14px;
-    /* Reduza o tamanho da fonte dos parágrafos dos detalhes do produto */
     max-width: 100%;
-    /* Faça o texto ocupar a largura total */
   }
 }

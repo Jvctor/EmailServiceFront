@@ -57,11 +57,9 @@
   display: block;
 }
 
-/* Estilos para dispositivos móveis (até 860px de largura) */
 @media screen and (max-width: 860px) {
   .container {
     flex-direction: column-reverse;
-    /* Mude para um layout de coluna */
     align-items: center;
   }
 

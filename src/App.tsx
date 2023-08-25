@@ -9,7 +9,6 @@ function App() {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [secondName, setSecondName] = useState('');
-  const [nameError, setNameError] = useState('');
   const [emailError, setEmailError] = useState('');
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
@@ -114,7 +113,6 @@ function App() {
             placeholder='Digite seu sobrenome'
           />
         </div>
-        {nameError && <p style={{ color: 'red' }}>{nameError}</p>}
         <Spacer height='4' />
         <PrimaryInput
           value={email}
@@ -137,7 +135,7 @@ function App() {
         <Spacer height='4' maxWidth='4' />
         <p></p>
       </div>
-      {showPopup && <NotificationPopup message={popupMessage} onClose={() => setShowPopup(false)} />}
+      {showPopup && <NotificationPopup message={popupMessage} />}
     </div>
   );
 }
